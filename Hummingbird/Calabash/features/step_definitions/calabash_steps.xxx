@@ -1,0 +1,39 @@
+require 'calabash-android/calabash_steps'
+
+#search
+When("I click on magnifying glass button") do
+  sleep 1
+  touch("* id:'action_search'")
+end
+
+When("I fill the search field with {string}") do |string|
+   enter_text "* id:'search_src_text'" , "#{string}"
+end
+
+Then("A list of movies related to {string} is displayed") do |string|
+   #query("* text:'#{string}'")
+    element_exists("* text:'#{string}'")
+end
+
+#scrolling search and home
+And("I scroll down infinitely") do
+  q = query("* id:'progress_bar'")
+  minutos = 15
+  tempo = minutos * 60
+  p q
+  segundos = 1
+  hide_soft_keyboard
+  
+  p "I will scroll down for #{minutos} minutes or util the end of list..."
+  while q.empty? and segundos < tempo #or end_of_line
+    scroll("android.support.v7.widget.RecyclerView", :down)
+	t = 2
+	sleep t
+	q = query("* id:'progress_bar'")
+	p "Elapsed #{segundos} seconds from #{tempo}." 
+	if not(q.empty?)
+		p "End of list."
+	end
+	segundos = segundos + t
+  end
+end

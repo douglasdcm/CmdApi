@@ -1,0 +1,50 @@
+query("* id:'text_title', text:Ninja")
+query("* id:'text_title', text:'Ninja'")
+query("* text:'Ninja'")
+query("* id:'text_title', text:'Ninja'")
+query("* text:'Ninja'")
+exit
+element_exists("* text:'ninja'")
+start_test_server_in_background
+element_exists("* text:'ninja'")
+element_exists("* text:'ninja'")
+exit
+start
+start_test_server_in_background
+query("* class:'android.widget.LinearLayout'")
+query("* class:*")
+query("LinearLayout")
+query("android.widget.LinearLayout")
+query("android.widget.LinearLayout index:0")
+scroll("android.widget.LinearLayout", :down)
+scroll("android.widget.LinearLayout", :down)
+scroll("android.widget.RelativeLayout", :down)
+scroll("android.widget.RelativeLayout", :down)
+scroll("android.widget.RelativeLayout", :down)
+scroll("android.support.v7.widget.RecyclerView", :down)
+scroll("android.support.v7.widget.RecyclerView", :down)
+scroll("android.support.v7.widget.RecyclerView", :down)
+scroll("android.support.v7.widget.RecyclerView", :down)
+scroll("android.support.v7.widget.RecyclerView", :down)
+query("android.widget.LinearLayout index:0")
+query("android.widget.LinearLayout index:0")
+scroll("android.support.v7.widget.RecyclerView", :down)
+scroll("android.support.v7.widget.RecyclerView", :down)
+scroll("android.support.v7.widget.RecyclerView", :down)
+query("* id:ProgressBar")
+query("* id:'ProgressBar'")
+query("* id:'progress_bar'")
+query("* id:'progress_bar'")
+query("* id:'progress_bar'")
+query("* id:'progress_bar'")
+exit
+reinstall_apps
+star_test_server_in_background
+start_test_server_in_background
+bundler exec  calabash-android resign app2.apk
+exit
+start_test_server_in_background
+bundler exec  calabash-android resign app2.apk
+exit
+start_test_server_in_background
+exit
