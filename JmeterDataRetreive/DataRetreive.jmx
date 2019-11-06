@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments">PRECONDITIONS
+1. Winium.Desktop.Driver.exe on port 5555 must be running in the same host where DISPATCH is installed (.\Winium.Desktop.Driver.exe --port 5555)
+2. chromedriver.exe must be running on port 9999 in the same host where this Test Plan is going to be run (.\chromedriver.exe --port=9999)
+3. The View Results Tree must be set to &quot;Log/Display Only to: Errors&quot;
+4. The tearDown Thread Group must have the steps to
+	take screenshot from DISPATCH
+	take screenshot from Web App Host
+	Close the DISPATCH window
+	Close the Web App Host browser</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+        <boolProp name="useGroupName">true</boolProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>false</time>
+            <latency>false</latency>
+            <timestamp>false</timestamp>
+            <success>false</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>false</threadName>
+            <dataType>false</dataType>
+            <encoding>true</encoding>
+            <assertions>false</assertions>
+            <subresults>true</subresults>
+            <responseData>true</responseData>
+            <samplerData>true</samplerData>
+            <xml>true</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <url>true</url>
+            <fileName>true</fileName>
+          </value>
+        </objProp>
+        <stringProp name="filename">C:\Users\Douglas\trainning\JmeterDataRetreive\response.csv</stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="chromeServer" elementType="Argument">
+            <stringProp name="Argument.name">chromeServer</stringProp>
+            <stringProp name="Argument.value">localhost</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="chromePort" elementType="Argument">
+            <stringProp name="Argument.name">chromePort</stringProp>
+            <stringProp name="Argument.value">9999</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="url" elementType="Argument">
+            <stringProp name="Argument.name">url</stringProp>
+            <stringProp name="Argument.value">https://www.vagas.com.br/empresas-contratando</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="count3" elementType="Argument">
+            <stringProp name="Argument.name">count3</stringProp>
+            <stringProp name="Argument.value">0</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="count2" elementType="Argument">
+            <stringProp name="Argument.name">count2</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Open a session with the browser" enabled="true">
+          <stringProp name="IncludeController.includepath">sessionOpen.jmx</stringProp>
+        </IncludeController>
+        <hashTree/>
+        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="reset status" enabled="false">
+          <collectionProp name="UserParameters.names">
+            <stringProp name="-892481550">status</stringProp>
+          </collectionProp>
+          <collectionProp name="UserParameters.thread_values">
+            <collectionProp name="85068">
+              <stringProp name="48">0</stringProp>
+            </collectionProp>
+          </collectionProp>
+          <boolProp name="UserParameters.per_iteration">false</boolProp>
+        </UserParameters>
+        <hashTree/>
+        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller 1" enabled="true">
+          <stringProp name="WhileController.condition"></stringProp>
+        </WhileController>
+        <hashTree>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="reset count2" enabled="false">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="-1354575613">count2</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="85106">
+                <stringProp name="49">1</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
+          <hashTree/>
+          <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="count1" enabled="true">
+            <stringProp name="CounterConfig.start">1</stringProp>
+            <stringProp name="CounterConfig.end"></stringProp>
+            <stringProp name="CounterConfig.incr">1</stringProp>
+            <stringProp name="CounterConfig.name">count1</stringProp>
+            <stringProp name="CounterConfig.format"></stringProp>
+            <boolProp name="CounterConfig.per_user">false</boolProp>
+          </CounterConfig>
+          <hashTree/>
+          <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="reset status" enabled="false">
+            <collectionProp name="UserParameters.names">
+              <stringProp name="-892481550">status</stringProp>
+            </collectionProp>
+            <collectionProp name="UserParameters.thread_values">
+              <collectionProp name="85068">
+                <stringProp name="48">0</stringProp>
+              </collectionProp>
+            </collectionProp>
+            <boolProp name="UserParameters.per_iteration">false</boolProp>
+          </UserParameters>
+          <hashTree/>
+          <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler1" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugSampler>
+          <hashTree/>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Get data from Vagas.com" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+            <boolProp name="TransactionController.parent">true</boolProp>
+          </TransactionController>
+          <hashTree>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">50</stringProp>
+              <stringProp name="RandomTimer.range">10</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+            <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Click letter in index" enabled="true">
+              <boolProp name="TransactionController.includeTimers">false</boolProp>
+              <boolProp name="TransactionController.parent">true</boolProp>
+            </TransactionController>
+            <hashTree>
+              <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+                <collectionProp name="UserParameters.names">
+                  <stringProp name="726115568">locatorType</stringProp>
+                  <stringProp name="338418838">locator</stringProp>
+                </collectionProp>
+                <collectionProp name="UserParameters.thread_values">
+                  <collectionProp name="1525038836">
+                    <stringProp name="1761666396">css selector</stringProp>
+                    <stringProp name="-860622529">#listaLetras &gt; li:nth-child(${count1}) &gt; a</stringProp>
+                  </collectionProp>
+                </collectionProp>
+                <boolProp name="UserParameters.per_iteration">false</boolProp>
+              </UserParameters>
+              <hashTree/>
+              <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Click letter in index" enabled="true">
+                <stringProp name="IncludeController.includepath">sendClick.jmx</stringProp>
+              </IncludeController>
+              <hashTree/>
+              <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Get the url" enabled="true">
+                <boolProp name="TransactionController.includeTimers">false</boolProp>
+                <boolProp name="TransactionController.parent">true</boolProp>
+              </TransactionController>
+              <hashTree>
+                <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Get the url" enabled="true">
+                  <stringProp name="IncludeController.includepath">sessionGetUrl.jmx</stringProp>
+                </IncludeController>
+                <hashTree/>
+                <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Hold url" enabled="false">
+                  <boolProp name="TransactionController.includeTimers">false</boolProp>
+                  <boolProp name="TransactionController.parent">true</boolProp>
+                </TransactionController>
+                <hashTree>
+                  <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+                    <collectionProp name="UserParameters.names">
+                      <stringProp name="-568080779">urlLetter</stringProp>
+                    </collectionProp>
+                    <collectionProp name="UserParameters.thread_values">
+                      <collectionProp name="-794645371">
+                        <stringProp name="1147841093">${url}</stringProp>
+                      </collectionProp>
+                    </collectionProp>
+                    <boolProp name="UserParameters.per_iteration">false</boolProp>
+                  </UserParameters>
+                  <hashTree/>
+                </hashTree>
+                <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="true">
+                  <stringProp name="BeanShellSampler.query">String myV = vars.get(&quot;url&quot;);
+vars.put(&quot;urlLetter&quot;, myV);</stringProp>
+                  <stringProp name="BeanShellSampler.filename"></stringProp>
+                  <stringProp name="BeanShellSampler.parameters"></stringProp>
+                  <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+                </BeanShellSampler>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+            <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller 2" enabled="true">
+              <stringProp name="WhileController.condition"></stringProp>
+            </WhileController>
+            <hashTree>
+              <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="reset count3" enabled="false">
+                <collectionProp name="UserParameters.names">
+                  <stringProp name="-1354575612">count3</stringProp>
+                </collectionProp>
+                <collectionProp name="UserParameters.thread_values">
+                  <collectionProp name="85068">
+                    <stringProp name="48">0</stringProp>
+                  </collectionProp>
+                </collectionProp>
+                <boolProp name="UserParameters.per_iteration">false</boolProp>
+              </UserParameters>
+              <hashTree/>
+              <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="count2" enabled="false">
+                <stringProp name="CounterConfig.start">1</stringProp>
+                <stringProp name="CounterConfig.end"></stringProp>
+                <stringProp name="CounterConfig.incr">1</stringProp>
+                <stringProp name="CounterConfig.name">count2</stringProp>
+                <stringProp name="CounterConfig.format"></stringProp>
+                <boolProp name="CounterConfig.per_user">false</boolProp>
+              </CounterConfig>
+              <hashTree/>
+              <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="reset status" enabled="false">
+                <collectionProp name="UserParameters.names">
+                  <stringProp name="-892481550">status</stringProp>
+                </collectionProp>
+                <collectionProp name="UserParameters.thread_values">
+                  <collectionProp name="85068">
+                    <stringProp name="48">0</stringProp>
+                  </collectionProp>
+                </collectionProp>
+                <boolProp name="UserParameters.per_iteration">false</boolProp>
+              </UserParameters>
+              <hashTree/>
+              <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler2" enabled="true">
+                <boolProp name="displayJMeterProperties">false</boolProp>
+                <boolProp name="displayJMeterVariables">true</boolProp>
+                <boolProp name="displaySystemProperties">false</boolProp>
+              </DebugSampler>
+              <hashTree/>
+              <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Click company" enabled="true">
+                <boolProp name="TransactionController.includeTimers">false</boolProp>
+                <boolProp name="TransactionController.parent">true</boolProp>
+              </TransactionController>
+              <hashTree>
+                <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+                  <collectionProp name="UserParameters.names">
+                    <stringProp name="726115568">locatorType</stringProp>
+                    <stringProp name="338418838">locator</stringProp>
+                    <stringProp name="0"></stringProp>
+                  </collectionProp>
+                  <collectionProp name="UserParameters.thread_values">
+                    <collectionProp name="-805108018">
+                      <stringProp name="1761666396">css selector</stringProp>
+                      <stringProp name="326880606">#listaClientes &gt; li:nth-child(${count2}) &gt; a &gt; span.logo &gt; img</stringProp>
+                      <stringProp name="0"></stringProp>
+                    </collectionProp>
+                  </collectionProp>
+                  <boolProp name="UserParameters.per_iteration">false</boolProp>
+                </UserParameters>
+                <hashTree/>
+                <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Retreive the company name" enabled="true">
+                  <stringProp name="IncludeController.includepath">dataRead.jmx</stringProp>
+                </IncludeController>
+                <hashTree/>
+                <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Click company" enabled="true">
+                  <stringProp name="IncludeController.includepath">sendClick.jmx</stringProp>
+                </IncludeController>
+                <hashTree/>
+                <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Get the url" enabled="true">
+                  <boolProp name="TransactionController.includeTimers">false</boolProp>
+                  <boolProp name="TransactionController.parent">true</boolProp>
+                </TransactionController>
+                <hashTree>
+                  <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Get the url" enabled="true">
+                    <stringProp name="IncludeController.includepath">sessionGetUrl.jmx</stringProp>
+                  </IncludeController>
+                  <hashTree/>
+                  <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Hold url" enabled="false">
+                    <boolProp name="TransactionController.includeTimers">false</boolProp>
+                    <boolProp name="TransactionController.parent">true</boolProp>
+                  </TransactionController>
+                  <hashTree>
+                    <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+                      <collectionProp name="UserParameters.names">
+                        <stringProp name="451470350">urlCompany</stringProp>
+                      </collectionProp>
+                      <collectionProp name="UserParameters.thread_values">
+                        <collectionProp name="-794645371">
+                          <stringProp name="1147841093">${url}</stringProp>
+                        </collectionProp>
+                      </collectionProp>
+                      <boolProp name="UserParameters.per_iteration">false</boolProp>
+                    </UserParameters>
+                    <hashTree/>
+                  </hashTree>
+                  <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="true">
+                    <stringProp name="BeanShellSampler.query">String myV = vars.get(&quot;url&quot;);
+vars.put(&quot;urlCompany&quot;, myV);</stringProp>
+                    <stringProp name="BeanShellSampler.filename"></stringProp>
+                    <stringProp name="BeanShellSampler.parameters"></stringProp>
+                    <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+                  </BeanShellSampler>
+                  <hashTree/>
+                </hashTree>
+              </hashTree>
+              <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller 3" enabled="true">
+                <stringProp name="WhileController.condition">LAST</stringProp>
+              </WhileController>
+              <hashTree>
+                <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="reset status" enabled="false">
+                  <collectionProp name="UserParameters.names">
+                    <stringProp name="-892481550">status</stringProp>
+                  </collectionProp>
+                  <collectionProp name="UserParameters.thread_values">
+                    <collectionProp name="85068">
+                      <stringProp name="48">0</stringProp>
+                    </collectionProp>
+                  </collectionProp>
+                  <boolProp name="UserParameters.per_iteration">false</boolProp>
+                </UserParameters>
+                <hashTree/>
+                <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="count3" enabled="false">
+                  <stringProp name="CounterConfig.start">0</stringProp>
+                  <stringProp name="CounterConfig.end"></stringProp>
+                  <stringProp name="CounterConfig.incr">1</stringProp>
+                  <stringProp name="CounterConfig.name">count3</stringProp>
+                  <stringProp name="CounterConfig.format"></stringProp>
+                  <boolProp name="CounterConfig.per_user">false</boolProp>
+                </CounterConfig>
+                <hashTree/>
+                <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler3" enabled="true">
+                  <boolProp name="displayJMeterProperties">false</boolProp>
+                  <boolProp name="displayJMeterVariables">true</boolProp>
+                  <boolProp name="displaySystemProperties">false</boolProp>
+                </DebugSampler>
+                <hashTree/>
+                <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Click the position" enabled="true">
+                  <boolProp name="TransactionController.includeTimers">false</boolProp>
+                  <boolProp name="TransactionController.parent">true</boolProp>
+                </TransactionController>
+                <hashTree>
+                  <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+                    <collectionProp name="UserParameters.names">
+                      <stringProp name="726115568">locatorType</stringProp>
+                      <stringProp name="338418838">locator</stringProp>
+                      <stringProp name="109410">nth</stringProp>
+                    </collectionProp>
+                    <collectionProp name="UserParameters.thread_values">
+                      <collectionProp name="93014625">
+                        <stringProp name="-348656589">class name</stringProp>
+                        <stringProp name="-731036153">link-detalhes-vaga</stringProp>
+                        <stringProp name="-68715710">${count3}</stringProp>
+                      </collectionProp>
+                    </collectionProp>
+                    <boolProp name="UserParameters.per_iteration">false</boolProp>
+                  </UserParameters>
+                  <hashTree/>
+                  <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Retreive the position name" enabled="true">
+                    <stringProp name="IncludeController.includepath">dataReadNthElement.jmx</stringProp>
+                  </IncludeController>
+                  <hashTree/>
+                  <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Click the position" enabled="true">
+                    <stringProp name="IncludeController.includepath">sendClickNthElement.jmx</stringProp>
+                  </IncludeController>
+                  <hashTree/>
+                  <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Get the url" enabled="true">
+                    <boolProp name="TransactionController.includeTimers">false</boolProp>
+                    <boolProp name="TransactionController.parent">true</boolProp>
+                  </TransactionController>
+                  <hashTree>
+                    <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Get the url" enabled="true">
+                      <stringProp name="IncludeController.includepath">sessionGetUrl.jmx</stringProp>
+                    </IncludeController>
+                    <hashTree/>
+                    <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Hold url" enabled="false">
+                      <boolProp name="TransactionController.includeTimers">false</boolProp>
+                      <boolProp name="TransactionController.parent">true</boolProp>
+                    </TransactionController>
+                    <hashTree>
+                      <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+                        <collectionProp name="UserParameters.names">
+                          <stringProp name="-1836719176">urlPosition</stringProp>
+                        </collectionProp>
+                        <collectionProp name="UserParameters.thread_values">
+                          <collectionProp name="-794645371">
+                            <stringProp name="1147841093">${url}</stringProp>
+                          </collectionProp>
+                        </collectionProp>
+                        <boolProp name="UserParameters.per_iteration">false</boolProp>
+                      </UserParameters>
+                      <hashTree/>
+                    </hashTree>
+                    <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="true">
+                      <stringProp name="BeanShellSampler.query">String myV = vars.get(&quot;url&quot;);
+vars.put(&quot;urlPosition&quot;, myV);</stringProp>
+                      <stringProp name="BeanShellSampler.filename"></stringProp>
+                      <stringProp name="BeanShellSampler.parameters"></stringProp>
+                      <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+                    </BeanShellSampler>
+                    <hashTree/>
+                  </hashTree>
+                </hashTree>
+                <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Retreive the position content" enabled="true">
+                  <boolProp name="TransactionController.includeTimers">false</boolProp>
+                  <boolProp name="TransactionController.parent">true</boolProp>
+                </TransactionController>
+                <hashTree>
+                  <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+                    <collectionProp name="UserParameters.names">
+                      <stringProp name="726115568">locatorType</stringProp>
+                      <stringProp name="338418838">locator</stringProp>
+                    </collectionProp>
+                    <collectionProp name="UserParameters.thread_values">
+                      <collectionProp name="-2133026578">
+                        <stringProp name="-348656589">class name</stringProp>
+                        <stringProp name="110256354">texto</stringProp>
+                      </collectionProp>
+                    </collectionProp>
+                    <boolProp name="UserParameters.per_iteration">false</boolProp>
+                  </UserParameters>
+                  <hashTree/>
+                  <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Retreive the position content" enabled="true">
+                    <stringProp name="IncludeController.includepath">dataRead.jmx</stringProp>
+                  </IncludeController>
+                  <hashTree/>
+                  <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Back to previous page" enabled="false">
+                    <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                      <collectionProp name="Arguments.arguments"/>
+                    </elementProp>
+                    <stringProp name="HTTPSampler.domain">${chromeServer}</stringProp>
+                    <stringProp name="HTTPSampler.port">${chromePort}</stringProp>
+                    <stringProp name="HTTPSampler.protocol"></stringProp>
+                    <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                    <stringProp name="HTTPSampler.path">/session/${chromeSession}/back</stringProp>
+                    <stringProp name="HTTPSampler.method">POST</stringProp>
+                    <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                    <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                    <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                    <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                    <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                    <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                    <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                  </HTTPSamplerProxy>
+                  <hashTree>
+                    <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="status" enabled="false">
+                      <stringProp name="JSONPostProcessor.referenceNames">status</stringProp>
+                      <stringProp name="JSONPostProcessor.jsonPathExprs">$.status</stringProp>
+                      <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+                    </JSONPostProcessor>
+                    <hashTree/>
+                  </hashTree>
+                  <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Navigate back to the page" enabled="true">
+                    <boolProp name="TransactionController.includeTimers">false</boolProp>
+                    <boolProp name="TransactionController.parent">true</boolProp>
+                  </TransactionController>
+                  <hashTree>
+                    <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+                      <collectionProp name="UserParameters.names">
+                        <stringProp name="116079">url</stringProp>
+                      </collectionProp>
+                      <collectionProp name="UserParameters.thread_values">
+                        <collectionProp name="-1674816603">
+                          <stringProp name="2130377976">${urlCompany}</stringProp>
+                        </collectionProp>
+                      </collectionProp>
+                      <boolProp name="UserParameters.per_iteration">false</boolProp>
+                    </UserParameters>
+                    <hashTree/>
+                    <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Navigate back to the page" enabled="true">
+                      <stringProp name="IncludeController.includepath">sessionNavigate.jmx</stringProp>
+                    </IncludeController>
+                    <hashTree/>
+                  </hashTree>
+                </hashTree>
+                <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="true">
+                  <stringProp name="BeanShellSampler.query">long number = Long.parseLong(vars.get(&quot;count3&quot;)); 
+number = number + 1;
+vars.put(&quot;count3&quot;, String.valueOf(number));
+log.info(&quot;count3: &quot; + vars.get(&quot;count3&quot;));</stringProp>
+                  <stringProp name="BeanShellSampler.filename"></stringProp>
+                  <stringProp name="BeanShellSampler.parameters"></stringProp>
+                  <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+                </BeanShellSampler>
+                <hashTree/>
+                <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="false">
+                  <stringProp name="BeanShellSampler.query">int myI = Integer.parseInt(vars.get(&quot;count3&quot;));
+myI = myI + 1;
+vars.put(&quot;count3&quot;, String.valueOf(myI));</stringProp>
+                  <stringProp name="BeanShellSampler.filename"></stringProp>
+                  <stringProp name="BeanShellSampler.parameters"></stringProp>
+                  <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+                </BeanShellSampler>
+                <hashTree/>
+              </hashTree>
+              <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Navigate back to the page" enabled="true">
+                <boolProp name="TransactionController.includeTimers">false</boolProp>
+                <boolProp name="TransactionController.parent">true</boolProp>
+              </TransactionController>
+              <hashTree>
+                <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+                  <collectionProp name="UserParameters.names">
+                    <stringProp name="116079">url</stringProp>
+                  </collectionProp>
+                  <collectionProp name="UserParameters.thread_values">
+                    <collectionProp name="-1804794499">
+                      <stringProp name="-2060309313">${urlLetter}</stringProp>
+                    </collectionProp>
+                  </collectionProp>
+                  <boolProp name="UserParameters.per_iteration">false</boolProp>
+                </UserParameters>
+                <hashTree/>
+                <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Navigate back to the page" enabled="true">
+                  <stringProp name="IncludeController.includepath">sessionNavigate.jmx</stringProp>
+                </IncludeController>
+                <hashTree/>
+              </hashTree>
+              <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="true">
+                <stringProp name="BeanShellSampler.query">long number = Long.parseLong(vars.get(&quot;count2&quot;)); 
+number = number + 1;
+vars.put(&quot;count2&quot;, String.valueOf(number));
+vars.put(&quot;count3&quot;, String.valueOf(0));
+log.info(&quot;count2: &quot; + vars.get(&quot;count2&quot;));</stringProp>
+                <stringProp name="BeanShellSampler.filename"></stringProp>
+                <stringProp name="BeanShellSampler.parameters"></stringProp>
+                <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+              </BeanShellSampler>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="false">
+            <stringProp name="BeanShellSampler.query">int myI = Integer.parseInt(vars.get(&quot;count1&quot;));
+vars.put(&quot;count1&quot;, String.valueOf(myI+1));</stringProp>
+            <stringProp name="BeanShellSampler.filename"></stringProp>
+            <stringProp name="BeanShellSampler.parameters"></stringProp>
+            <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+          </BeanShellSampler>
+          <hashTree/>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Navigate back to the page" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+            <boolProp name="TransactionController.parent">true</boolProp>
+          </TransactionController>
+          <hashTree>
+            <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+              <collectionProp name="UserParameters.names">
+                <stringProp name="116079">url</stringProp>
+              </collectionProp>
+              <collectionProp name="UserParameters.thread_values">
+                <collectionProp name="-1804794499">
+                  <stringProp name="-2060309313">${urlLetter}</stringProp>
+                </collectionProp>
+              </collectionProp>
+              <boolProp name="UserParameters.per_iteration">false</boolProp>
+            </UserParameters>
+            <hashTree/>
+            <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Navigate back to the page" enabled="true">
+              <stringProp name="IncludeController.includepath">sessionNavigate.jmx</stringProp>
+            </IncludeController>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="tearDown Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </PostThreadGroup>
+      <hashTree>
+        <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Close session" enabled="false">
+          <stringProp name="IncludeController.includepath">sessionClose.jmx</stringProp>
+        </IncludeController>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
