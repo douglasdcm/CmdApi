@@ -1,0 +1,15 @@
+C:\Users\Douglas\source\repos\Catalog.Api\Catalog.Api\obj\Debug\netcoreapp2.1\Catalog.Api.csproj.CoreCompileInputs.cache
+C:\Users\Douglas\source\repos\Catalog.Api\Catalog.Api\obj\Debug\netcoreapp2.1\Catalog.Api.AssemblyInfoInputs.cache
+C:\Users\Douglas\source\repos\Catalog.Api\Catalog.Api\obj\Debug\netcoreapp2.1\Catalog.Api.AssemblyInfo.cs
+C:\Users\Douglas\source\repos\Catalog.Api\Catalog.Api\bin\Debug\netcoreapp2.1\Catalog.Api.deps.json
+C:\Users\Douglas\source\repos\Catalog.Api\Catalog.Api\bin\Debug\netcoreapp2.1\Catalog.Api.runtimeconfig.json
+C:\Users\Douglas\source\repos\Catalog.Api\Catalog.Api\bin\Debug\netcoreapp2.1\Catalog.Api.runtimeconfig.dev.json
+C:\Users\Douglas\source\repos\Catalog.Api\Catalog.Api\bin\Debug\netcoreapp2.1\Catalog.Api.dll
+C:\Users\Douglas\source\repos\Catalog.Api\Catalog.Api\bin\Debug\netcoreapp2.1\Catalog.Api.pdb
+C:\Users\Douglas\source\repos\Catalog.Api\Catalog.Api\obj\Debug\netcoreapp2.1\Catalog.Api.csprojAssemblyReference.cache
+C:\Users\Douglas\source\repos\Catalog.Api\Catalog.Api\obj\Debug\netcoreapp2.1\Catalog.Api.RazorAssemblyInfo.cache
+C:\Users\Douglas\source\repos\Catalog.Api\Catalog.Api\obj\Debug\netcoreapp2.1\Catalog.Api.RazorAssemblyInfo.cs
+C:\Users\Douglas\source\repos\Catalog.Api\Catalog.Api\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\Users\Douglas\source\repos\Catalog.Api\Catalog.Api\obj\Debug\netcoreapp2.1\Catalog.Api.RazorTargetAssemblyInfo.cache
+C:\Users\Douglas\source\repos\Catalog.Api\Catalog.Api\obj\Debug\netcoreapp2.1\Catalog.Api.dll
+C:\Users\Douglas\source\repos\Catalog.Api\Catalog.Api\obj\Debug\netcoreapp2.1\Catalog.Api.pdb
