@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/Douglas/Google Drive/Pessoais/Estudos/Cucumber/jars/cucumber-core-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Douglas/Google Drive/Pessoais/Estudos/Cucumber/jars/cucumber-java-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Douglas/Google Drive/Pessoais/Estudos/Cucumber/jars/cucumber-junit-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Douglas/Google Drive/Pessoais/Estudos/Cucumber/jars/cucumber-jvm-deps-1.0.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Douglas/Google Drive/Pessoais/Estudos/Cucumber/jars/cucumber-reporting-4.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Douglas/Google Drive/Pessoais/Estudos/Cucumber/jars/gherkin-2.12.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Douglas/Google Drive/Pessoais/Estudos/Selenium/jars/selenium-server-standalone-3.141.59.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Douglas/Google Drive/Pessoais/Estudos/Cucumber/jars/cucumber-html-0.2.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Douglas/Google Drive/Pessoais/Estudos/Cucumber/jars/cucumber-html-0.2.7-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
