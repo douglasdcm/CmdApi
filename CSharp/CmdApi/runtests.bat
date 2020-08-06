@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe" "C:\Users\Douglas\trainning\CSharp\CmdApiUnitTest\bin\Debug\netcoreapp2.2\CmdApiUnitTest.dll" /Logger:trx
